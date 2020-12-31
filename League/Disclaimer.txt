@@ -1,0 +1,13 @@
+La seguente traccia non è stata scritta o visualizzata da un docente, ma creata da uno studente del corso per il ripasso di possibili argomenti della prova scritta.
+La soluzione proposta non è stata visualizzata o corretta da un docente, pertanto non è da considerare corretta.
+La soluzione proposta è stata testata e non ha presentato errori sulle seguenti macchine:
+- Windows10 20H2:
+	NetBeans 12.0
+	Java 1.8 
+	Java EE 8
+	GlassFish 5.1
+- Macchina virtuale Windows10 del corso
+- Ubuntu 20:
+	Java 1.8 
+	Java EE 8
+	GlassFish 5.1
