@@ -9,9 +9,6 @@ import java.util.Scanner;
  */
 public class League_WebServicesClient {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         System.out.format("Id giocatore: ");
