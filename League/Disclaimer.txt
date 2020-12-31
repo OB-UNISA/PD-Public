@@ -8,6 +8,7 @@ La soluzione proposta è stata testata e non ha presentato errori sulle seguenti
 	GlassFish 5.1
 - Macchina virtuale Windows10 del corso
 - Ubuntu 20:
+	NetBeans 12.0
 	Java 1.8 
 	Java EE 8
 	GlassFish 5.1
