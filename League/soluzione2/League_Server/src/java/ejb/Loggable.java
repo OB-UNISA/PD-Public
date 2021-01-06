@@ -9,7 +9,7 @@ import javax.interceptor.InterceptorBinding;
 
 /**
  *
- * @author OB
+ * https://github.com/agoncal/agoncal-book-javaee7
  */
 @InterceptorBinding
 @Retention(RUNTIME)

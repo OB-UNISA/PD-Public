@@ -6,7 +6,7 @@ import javax.enterprise.inject.spi.InjectionPoint;
 
 /**
  *
- * @author OB
+ * https://github.com/agoncal/agoncal-book-javaee7
  */
 public class LoggingProduce {
 
