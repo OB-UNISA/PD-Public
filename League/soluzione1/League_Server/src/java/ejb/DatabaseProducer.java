@@ -6,7 +6,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author OB
+ * https://github.com/agoncal/agoncal-book-javaee7
  */
 public class DatabaseProducer {
 
