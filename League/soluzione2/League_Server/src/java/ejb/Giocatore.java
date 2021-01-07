@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.PrePersist;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -15,15 +16,25 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author OB
  */
-@NamedQuery(name = Giocatore.FIND_ALL, query = "SELECT g FROM Giocatore g")
+@NamedQueries({
+    @NamedQuery(name = Giocatore.GET_ALL, query = "SELECT g FROM Giocatore g"),
+    @NamedQuery(name = Giocatore.GET_BY_ID, query = "SELECT g FROM Giocatore g WHERE g.id = ?1"),
+    @NamedQuery(name = Giocatore.GET_BY_REGIONE, query = "SELECT g FROM Giocatore g WHERE g.regione = ?1"),
+    @NamedQuery(name = Giocatore.GET_BY_LEGA, query = "SELECT g FROM Giocatore g WHERE g.lega = ?1"),
+    @NamedQuery(name = Giocatore.GET_BY_LIVELLO_GREATER_OR_EQUAL_THAN_X, query = "SELECT g FROM Giocatore g WHERE g.livello >= ?1")
+})
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Giocatore implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    public static final String FIND_ALL = "Giocatore.FIND_ALL";
-    
+    public static final String GET_ALL = "Giocatore.GET_ALL";
+    public static final String GET_BY_ID = "Giocatore.GET_BY_ID";
+    public static final String GET_BY_REGIONE = "Giocatore.GET_BY_REGIONE";
+    public static final String GET_BY_LEGA = "Giocatore.GET_BY_LEGA";
+    public static final String GET_BY_LIVELLO_GREATER_OR_EQUAL_THAN_X = "Giocatore.GET_BY_LIVELLO_GREATER_OR_EQUAL_THAN_X";
+
     @Id
     @GeneratedValue
     @XmlAttribute
@@ -99,7 +110,7 @@ public class Giocatore implements Serializable {
     }
 
     @PrePersist
-    public void validate() throws IllegalArgumentException{
+    public void validate() throws IllegalArgumentException {
         if (livello < 1 || (livello < 30 && !lega.equals("unranked")) || essenzaBlu < 0 || riotPoints < 0) {
             throw new IllegalArgumentException("Uno o più argomenti non validi");
         }

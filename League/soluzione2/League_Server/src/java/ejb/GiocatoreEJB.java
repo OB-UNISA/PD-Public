@@ -47,30 +47,30 @@ public class GiocatoreEJB implements GiocatoreEJBRemote {
     @Override
     @Loggable
     public Giocatore getById(Long id) {
-        return em.createQuery("SELECT g FROM Giocatore g WHERE g.id = :id", Giocatore.class).setParameter("id", id).getSingleResult();
+        return em.createNamedQuery(Giocatore.GET_BY_ID, Giocatore.class).setParameter(1, id).getSingleResult();
     }
 
     @Override
     @Loggable
     public Collection<Giocatore> getByRegione(String regione) {
-        return em.createQuery("SELECT g FROM Giocatore g WHERE g.regione = :regione", Giocatore.class).setParameter("regione", regione).getResultList();
+        return em.createNamedQuery(Giocatore.GET_BY_REGIONE, Giocatore.class).setParameter(1, regione).getResultList();
     }
 
     @Override
     @Loggable
     public Collection<Giocatore> getByLega(String lega) {
-        return em.createQuery("SELECT g FROM Giocatore g WHERE g.lega = :lega", Giocatore.class).setParameter("lega", lega).getResultList();
+        return em.createNamedQuery(Giocatore.GET_BY_LEGA, Giocatore.class).setParameter(1, lega).getResultList();
     }
 
     @Override
     public Collection<Giocatore> getAll() {
-        return em.createNamedQuery(Giocatore.FIND_ALL, Giocatore.class).getResultList();
+        return em.createNamedQuery(Giocatore.GET_ALL, Giocatore.class).getResultList();
     }
 
     @Override
     @Loggable
     public Collection<Giocatore> getByLivelloGreaterOrEqualThanX(Integer x) {
-        return em.createQuery("SELECT g FROM Giocatore g WHERE g.livello >= :livello", Giocatore.class).setParameter("livello", x).getResultList();
+        return em.createNamedQuery(Giocatore.GET_BY_LIVELLO_GREATER_OR_EQUAL_THAN_X, Giocatore.class).setParameter(1, x).getResultList();
     }
 
     @Loggable
